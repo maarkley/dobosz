@@ -1,0 +1,138 @@
+.home-news {
+    position: relative;
+    overflow: hidden;
+    min-height: 67vw;
+    .decorator {
+        position: absolute;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: 2s $extraSmooth;
+        transform-style: preserve-3d;
+        &.full {
+            width: 110%;
+            height: 110%;
+            left: -5%;
+            top: -5%;
+            z-index: 2;
+            background-size: cover;
+            background-image: url('../../dist/img/home/cacao_bg.png');
+            transition: none;
+        }
+    }
+    .row {
+            position: relative;
+            background-color: $lightGold;
+        
+        &.upper {
+            overflow: hidden;            
+            .decorator {
+                &.left {
+                    width: 45%;
+                    @include sizer(45%);
+                    left: 0;
+                    top: 0;
+                    background-image: url('../../dist/img/Ozdobniki/orzech.png');
+                }
+                &.right {
+                    width: 25%;
+                    @include sizer(75%);
+                    right: 9%;
+                    top: 7%;
+                    transform: translate(20%, -70%);
+                    background-image: url('../../dist/img/Ozdobniki/cacao.png');
+                }
+                &.top-left {
+                    width: 17%;
+                    @include sizer(100%);
+                    left: 4%;
+                    top: 0;
+                    transform: translate(0, -32%);
+                    background-image: url('../../dist/img/home/001_morela.png');
+                }
+            }
+        }
+        &.lower {
+            background-color: $white;
+            padding-bottom: 30px;
+            .decorator {
+                &.left {
+                    width: 25%;
+                    @include sizer(180%);
+                    left: 0;
+                    bottom: 0;
+                    background-image: url('../../dist/img/home/002_puder.png');
+                }
+                &.right {
+                    width: 17%;
+                    @include sizer(100%);
+                    right: 4%;
+                    bottom: 0;
+                    background-image: url('../../dist/img/home/004_borowka.png');
+                }
+            }
+        }
+        .article {
+            display: flex;
+            flex: 0 0 100%;
+            flex-wrap: wrap;
+            // box-shadow: 0 0 50px #acacac;
+            .thumb {
+                position: relative;
+                flex: 0 0 66.6666%;
+                overflow: hidden;
+                z-index: 10;
+                @media ($tosmall) {
+                    flex: 0 0 100%;
+                }
+                &:before {
+                    content: '';
+                    display: block;
+                    padding-top: 50%;
+                }
+            }
+            .info-box {
+                flex: 0 0 33.333333%;
+                background-color: $white;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-align: center;
+                align-items: center;
+                z-index: 5;
+                @media ($tosmall) {
+                    flex: 0 0 100%;
+                    box-shadow: none;
+                }
+                .date {
+                    font-style: italic;
+                    color: $gold;
+                    &:before {
+                        content: '';
+                        display: block;
+                        width: 2px;
+                        height: 30px;
+                        margin: 0 auto;
+                        background-color: $gold;
+                        margin-bottom: 15px;
+                    }
+                }
+                .title {
+                    font-size: 26px;
+                    &:after {
+                        content: '';
+                        display: block;
+                        width: 30px;
+                        height: 2px;
+                        margin: 0 auto;
+                        background-color: $gold;
+                        margin-top: 30px;                        
+                    }
+                }
+                .primary-btn {
+                    margin: 0 0 60px;
+                }
+            }
+        }
+    }
+}

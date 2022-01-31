@@ -1,0 +1,341 @@
+.product-page {
+    padding-bottom: 120px;
+    position: relative;
+    .arrow {
+        position: absolute;
+        top: 50vh;
+        width: 70px;
+        height: 150px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translate(0, -50%);
+        @media($tosmall) {
+            top: 0;
+            width: 42px;
+            height: 42px;
+        }
+        &.prev {
+            left: 4%;
+            background-image: url('../../dist/img/strzalka_lewo.svg');
+        }
+        &.next {
+            right: 4%;
+            
+            background-image: url('../../dist/img/strzalka_prawo.svg');
+        }
+    }
+    .tiny-title {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: Sofia-Pro;
+        }
+    .left {
+        flex: 0 0 50%;
+        width: 50%;
+        max-width: 50%;
+        padding-right: 30px;
+        text-align: center;
+        @media ($tosmall) {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+        .packaging {
+            margin-top: 30px;
+            display: inline-block;
+            .cubes {
+                display: flex;
+                margin-top: 30px;
+                .slick-current {
+                    .item {
+                        cursor: pointer;
+                        background-color: $gold;
+                        color: $white;
+                        #candy-icon {
+                            path, line {
+                                stroke: $white;
+                            }
+                        }
+                    }
+                }
+                .item {
+                    border: 1px solid $gold;
+                    border-right: none;
+                    font-style: italic;
+                    font-weight: 700;
+                    position: relative;
+                    height: 81px;
+                    width: 80px;
+                    max-width: 80px;
+                    display: flex !important;
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 80px;
+                    transition: 0.25s $extraSmooth;
+                    @media($tomobile) {
+                        min-width: 50px;
+                        max-width: 50px;
+                        width: 50px;
+                        height: 50px;
+                    }
+                    #candy-icon {
+                        width: 80%;
+                            path, line {
+                                transition: 0.25s $extraSmooth;
+                            }
+                        }
+                    &:hover {
+                        cursor: pointer;
+                        background-color: $gold;
+                        color: $white;
+                        #candy-icon {
+                            path, line {
+                                stroke: $white;
+                            }
+                        }
+                    }
+                    &.active {
+                        cursor: pointer;
+                        background-color: $gold;
+                        color: $white;
+                        #candy-icon {
+                            path, line {
+                                stroke: $white;
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        border-right: 1px solid $gold;
+                    }
+                }
+            }
+        }
+        .product-slider {
+            .item {
+                padding: 0 90px;
+                position: relative;
+                img {
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+            }
+            .slick-dots {
+                margin-top: 45px;
+                li {
+                    width: 60px;
+                    height: 2px;
+                    background-color: #f2f2f2;
+                    transition: 0.2s $smooth;
+                    @media ($tosmall) {
+                        width: 11px;
+                    }
+                    &.slick-active {
+                        background-color: #e2e2e2;
+                    }
+                    button {
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .arrow {
+            position: absolute;
+            top: 50%;
+            width: 72px;
+            height: 100px;
+            z-index: 15;
+            transition: 0.2s $smooth2;
+            @media ($tosmall) {
+                top: 0;
+                width: 42px;
+                height: 42px;
+            }
+            &:hover {
+                cursor: pointer;
+                opacity: 0.7;
+                &.prev {
+                    transform: translate(-10px, -50%);
+                }
+                &.next {
+                    transform: translate(10px, -50%) rotate(180deg);
+                }
+            }
+            &:before {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 2px;
+                height: 72%;
+                transform-origin: 100% 0;
+                transform: rotate(45deg);
+                background-color: #ccc;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 2px;
+                height: 72%;
+                transform-origin: 100% 100%;
+                transform: rotate(-45deg);
+                background-color: #ccc;
+            }
+            &.prev {
+                left: -45px;
+                transform: translate(0, -50%);
+            }
+            &.next {
+                right: -45px;
+                transform: translate(0, -50%) rotate(180deg);
+            }
+        }
+        }
+    }
+    .right {
+        flex: 0 0 50%;
+        padding-left: 30px;
+        @media ($tosmall) {
+            flex: 0 0 100%;
+            padding: 0;
+
+        }
+        .num {
+            color: $gold;
+            font-style: italic;
+            font-size: 24px;
+            margin-bottom: 35px;
+            span {
+                color: #ccc;
+                font-size: 18px;
+            }
+        }
+        .product-name {
+            font-size: 38px;
+            margin-bottom: 30px;
+            &:after {
+                content: '';
+                display: block;
+                margin-top: 25px;
+                width: 60px;
+                height: 1px;
+                background-color: #ccc;
+            }
+        }
+        .lead {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        .specification {
+            line-height: 1.4;
+            font-family: Sofia-Pro;
+            margin-bottom: 60px;
+        }
+        .downloads {
+            .item {
+                display: flex;
+                margin-bottom: 3px;
+                align-items: center;
+                overflow: hidden;
+                transition: 0.18s $smooth;
+                &:hover {
+                    opacity: 0.6;
+                    .download-icon {
+                        &:before {
+                            top: 90px;
+                        }
+                        &:after {
+                            top: 0;
+                        }
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .download-icon {
+                    display: block;
+                    width: 18px;
+                    height: 18px;
+                    margin-left: 15px;
+                    position: relative;
+                    &:before {
+                        content: '';
+                        display: block;
+                        position: relative;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-image: url("../../dist/img/ikona_pobranie.svg");
+                        transition: 0.18s $smooth;
+                    }
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-image: url("../../dist/img/ikona_pobranie.svg");
+                        transition: 0.18s $smooth;
+                        top: -60px;
+                    }
+                }
+                
+            }
+        }
+    }
+    .info-table {
+        flex: 0 0 100%;
+        display: flex;
+        margin-top: 140px;
+        border: 2px solid $gold;
+        @media ($tosmall) {
+            overflow-x: scroll;
+        }
+        .column {
+            flex: 0 0 16.666667%;
+            @media ($tosmall) {
+                flex: 1 0 120px;
+            }
+            &:first-child {
+                .cell {
+                    border-left: none !important;
+
+                }
+            }
+            .cell {
+                padding: 14px;
+                text-align: center;
+                font-style: italic;
+                border-top: 2px solid $gold;
+                border-left: 2px solid $gold;
+                &:first-child {
+                    font-style: normal;
+                    border-top: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 66px;
+                    padding: 15px 10px;
+                }
+                &:last-child {
+
+                }
+            }
+        }
+    }
+}

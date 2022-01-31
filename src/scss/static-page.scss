@@ -1,0 +1,23 @@
+.static-page {
+	margin: 120px 0 30px;
+	p {
+		margin-bottom: 30px;
+	}
+	img {
+		margin-bottom: 30px;
+	}
+	.circle-btn {
+		margin-bottom: 60px;
+	}
+}
+.background-layer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100%;
+	z-index: -1;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../../dist/img/kontakt/bg_cukierki.png');
+}

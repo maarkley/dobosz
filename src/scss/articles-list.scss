@@ -1,0 +1,87 @@
+.articles-list {
+    margin: 170px 0 45px;
+    @media($tosmall) {
+        margin: 45px 0;
+    }
+    .list {
+        .item {
+            margin-bottom: 25px;
+            article {
+                display: flex;
+                border: 1px solid $gold;
+                @media($tosmall) {
+                    flex-direction: column;
+                }
+                .left {
+                    flex-grow: 0;
+                    display: flex;
+                    justify-content: center;
+                    .date {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        padding: 0 40px;
+                        color: $gold;
+                        font-weight: 500;
+                        font-style: italic;
+                        font-size: 20px;
+                        &:before {
+                            content: '';
+                            flex-grow: 1;
+                            display: block;
+                            width: 1px;
+                            margin: 0 auto 22px;
+                            background-color: $gold;
+                        }
+                        &:after {
+                            content: '';
+                            flex-grow: 1;                            
+                            display: block;
+                            width: 1px;
+                            margin: 22px auto 0;                            
+                            background-color: $gold;
+                        }
+                    }
+                }
+                .img {
+                    flex: 0 0 35%;
+                    position: relative;
+                    border-left: 1px solid $gold;
+                    border-right: 1px solid $gold;      
+                    @media ($tosmall) {
+                        flex: 0 0 200px;
+                    }
+                    img {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .info {
+                    padding: 60px;
+                    text-align: center;
+                    // flex-shrink: 0;
+                    flex-grow: 1;
+                    @media ($tosmall) {
+                        padding: 20px;
+                    }
+                    .article-title {
+                        font-size: 38px;
+                        margin-bottom: 30px;
+                        @media ($tosmall) {
+                            font-size: 26px;
+                            margin-bottom: 0;
+                        }
+
+                    }
+
+                }
+                
+            }
+        }
+    }
+}

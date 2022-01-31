@@ -1,0 +1,334 @@
+.upper-row {
+    padding-bottom: 60px;
+    .left {
+        flex: 0 0 50%;
+        padding: 0 90px 0 30px;
+        @media ($tosmall) {
+            flex: 0 0 100%;
+            padding: 0;
+        }
+    }
+    .right {
+        flex: 0 0 50%;
+        padding: 0 90px;
+        border-left: 1px solid $gold;
+        @media ($tosmall) {
+            flex: 0 0 100%;
+            padding: 0;
+            border: none;
+        }
+        img {
+            width: 140px;
+            margin-bottom: 20px;
+        }
+    }
+    .circle-btn {
+        margin: 30px auto;
+    }
+}
+.contact-page-wrapper {
+    position: relative;
+    overflow: hidden;
+// background-image: url('../../dist/img/kontakt/bg_cukierki.png');
+background-size: cover;
+background-repeat: no-repeat;
+perspective: 1000px;
+@media ($tosmall) {
+    background-image: none;
+}
+.bg-front {
+position: absolute;
+    left: 0;
+    top: 0;
+    height: 110%;
+    width: 110%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+background-image: url('../../dist/img/kontakt/bg_2.png');
+}
+.bg-back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 110%;
+    width: 110%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+background-image: url('../../dist/img/kontakt/bg_cukierki.png');
+
+}
+}
+.contact-row {
+    margin-bottom: 120px;
+    @media ($tosmall) {
+        margin-bottom: 30px;   
+    }
+    .wrapper {
+        padding: 0 30px;
+        @media ($tosmall) {
+            padding: 0 20px;
+        }
+    }
+    .flex-12 {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+    .left {
+        padding-right: 45px;
+        flex: 0 0 400px;
+    }
+    .right {
+        flex: 1 0;
+        position: relative;
+        .form-message {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(calc(-100% - 30px), -50%);
+                padding: 15px;
+                background-color: $graphiteBg;
+                color: $white;
+                transition: 0.15s $smooth;
+                opacity: 0;
+                font-weight: 300;
+                
+                font-family: Sofia-Pro;
+                &.show {
+                    opacity: 1;
+
+                }
+                &.success {
+                    color: green;
+                }
+            }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .form-group {
+                margin-bottom: 25px;
+                position: relative;
+                &.error {
+                    .validation-box {
+                        // border: 1px solid $red;
+                        color: $red;
+                    }
+                }
+                &.show-validation {
+                    .validation-box {
+                        transition-delay: 0.2s;
+                        opacity: 1;
+                    }
+                }
+                .validation-box {
+                    color: $white;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(calc(-100% - 20px), -50%);
+                    padding: 5px 15px;
+                    // border: 1px solid $white;
+                    opacity: 0;
+                    background-color: $graphiteBg;
+                    transition: 0.15s $smooth;
+                    font-weight: 300;
+                font-family: Sofia-Pro;
+                    
+                }
+                &.full {
+                    flex: 0 0 100%;
+                }
+                &.split {
+                    flex: 0 0 46%;
+                }
+
+                select, input, textarea {
+                    width: 100%;
+                    font-size: 16px;
+                    padding: 10px 5px;
+                    display: block;
+                    border: none;
+                    border-bottom: 1px solid $txtColor;
+                    font-family: Sofia-Pro;
+                    font-weight: 300;
+                    color: $txtColor;
+                    transition: 0.2s $smooth;
+                    backface-visibility: hidden;
+                    &::placeholder {
+                    font-weight: 300;
+                    color: $txtColor;
+                        font-family: Sofia-Pro;
+                    }
+                    &:focus {
+                        border-bottom: 1px solid $gold;
+                    }
+                }
+                textarea {
+                    height: 48px;
+                }
+            }
+            .primary-btn {
+                margin: 30px auto 0;
+            }
+        }
+    }
+
+         .bar {
+            width: 100%;
+            height: 1px;
+            background-color: $gold;
+            position: relative;
+            margin-bottom: 15px;
+            &:before {
+                content: '';
+                display: block;
+                left: 0;
+                top: 0;
+                height: 6px;
+                width: 60px;
+                background-color: $gold;
+                transform: translate(0, -40%) translateZ(0);
+            }
+        }
+        .counter {
+            font-style: italic;
+            font-size: 26px;
+            color: $gold;
+            margin-bottom: 20px;
+            span {
+                color: #ccc;
+                font-size: 16px;
+            }
+        }
+        
+
+    
+}
+
+.contact-grid {
+    margin: 0 -60px;
+    .column {
+        flex: 0 0 calc(50% - 60px);
+        margin: 0 30px 60px;
+        @media ($tosmall) {
+            flex: 0 0 100%;
+            margin: 0 0 30px;
+        }
+        &.active {
+            .switch {
+                .column-title {
+                    transform: translate(0, 0) scale(1);
+                }    
+                .bar {
+                    &:before {
+                        width: 30%;
+                    }
+                }
+                .arrow {
+                    transform: rotate(-270deg);
+                }
+            }
+            
+        }
+        .switch {
+            position: relative;
+            transition: 0.3s $extraSmooth;
+            &:hover {
+                cursor: pointer;
+                opacity: 0.75;
+            }
+            .bar {
+                width: 100%;
+                height: 1px;
+                background-color: $gold;
+                position: relative;
+                margin-bottom: 15px;
+                &:before {
+                    content: '';
+                    display: block;
+                    left: 0;
+                    top: 0;
+                    height: 6px;
+                    width: 60px;
+                    background-color: $gold;
+                    transform: translate(0, -40%) translateZ(0);
+                    transition: 0.35s $extraSmooth;
+                }
+            }
+            .counter {
+                font-style: italic;
+                font-size: 26px;
+                color: $gold;
+                margin-bottom: 20px;
+                span {
+                    color: #ccc;
+                    font-size: 16px;
+                }
+            }
+            .arrow {
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                right: 0;
+                 top: 18px;
+                 background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-image: url("../../dist/img/strzalka_lewo.svg");
+                transform: rotate(-90deg);
+                transition: 0.35s $extraSmooth;
+            }
+            .column-title {
+                font-size: 36px;
+                margin-bottom: 30px;
+                transform-origin: 0 0;
+                transform: translate(60px, -48px) scale(0.65);
+                transition: 0.35s $extraSmooth;
+            }
+        }
+        .content {
+            display: none;
+            h2 {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+            h4 {
+                font-size: 24px;
+                color: $gold;
+                margin-bottom: 20px;
+            }
+            p {
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+}
+
+
+.google-map {
+    height: 400px;
+}
+
+.get-route-section {
+    padding: 60px 0 40px;
+}
+.contact-bar {
+            width: 100%;
+            height: 1px;
+            background-color: $gold;
+            position: relative;
+            margin-bottom: 15px;
+            &:before {
+                content: '';
+                display: block;
+                left: 0;
+                top: 0;
+                height: 6px;
+                width: 60px;
+                background-color: $gold;
+                transform: translate(0, -40%) translateZ(0);
+            }
+        }

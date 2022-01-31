@@ -1,0 +1,44 @@
+html {
+    overflow-x: hidden;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: $txtColor;
+    font-family: Calluna;
+    position: relative;
+}
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+p {
+    font-family: Sofia-Pro;
+    font-weight: 300;
+}
+select, input, textarea {
+    &:focus {
+        outline: none;
+    }
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: inherit;
+    &:focus {
+        outline: none;
+    }
+}
+textarea {
+    resize: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+}

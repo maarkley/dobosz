@@ -1,0 +1,256 @@
+.home-about-us {
+    padding: 1px 0 150px;
+    // overflow: hidden;
+    position: relative;
+    @include fullBg('img/onas/bg_001.jpg');
+     .decorator {
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+                    z-index: 15;
+            transition: 2s $extraSmooth;
+            background-size: contain;
+            &.top-center {
+                    width: 14%;
+                    @include sizer(96%);
+                    left: 60%;
+                    top: -11%;
+                    transform: translate(0, -30%);
+                    background-image: url('../../dist/img/home/005_wisnia.png');
+                }
+                &.top-left {
+                    width: 22%;
+                    @include sizer(96%);
+                    left: 10%;
+                    top: 4%;
+                    transform: translate(-20%, -32%);
+                    background-image: url('../../dist/img/home/007_kokos.png');
+                }
+                &.top-left-inner {
+                    width: 16%;
+                    @include sizer(96%);
+                    left: 0%;
+                    top: -8%;
+                    background-image: url('../../dist/img/home/008_kokos.png');
+                    z-index: 15;
+                }
+                &.top-right {
+                    width: 19%;
+                    @include sizer(160%);
+                    bottom: 5%;
+                    left: 0;
+                    transform: translate(10%, 0%);
+                    background-image: url('../../dist/img/home/006_orzechy.png');
+                }
+                &.center-left-upper {
+                    width: 18%;
+                    @include sizer(96%);
+                    right: 0%;
+                    top: 13%;
+                    background-image: url('../../dist/img/home/001_morela.png');
+                }
+                &.center-left {
+                    width: 20%;
+                    @include sizer(96%);
+                    right: -7%;
+                    bottom: 18%;
+                    background-image: url('../../dist/img/home/004_borowka.png');
+                    
+                }
+        }
+    .grid {
+        flex-wrap: wrap;
+        perspective: 1000px;
+        .item {
+                display: flex;
+                position: relative;
+                flex-wrap: wrap;
+                transform-origin: 100% 100%;
+                &:hover {
+                    cursor: pointer;
+                    &:before {
+                        transform: scale(0.95);
+                    }
+                    .thumb {
+                        img {
+                            transform: translate(-50%, -50%) scale(1.08);
+                        }
+                    }
+                    
+                    .info-box {
+                        &.default {
+                            &:before {
+                                height: 30%;
+                            }
+                            &:after {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+                &.vertical {
+                    .thumb {
+                        flex: 0 0 100%;
+                    }
+                    .info-box {
+                        flex: 0 0 100%;
+                        .spacer {
+                            padding-top: 100%;
+                        }
+                    }
+                }
+                &.experience {
+                    .info-box {
+                        color: $white;
+                    background-color: $txtColor;
+                                                
+                    }
+                    &:before {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        left: 20px;
+                        top: 20px;
+                        width: calc(100% - 40px);
+                        height: calc(100% - 40px);
+                        border: 1px solid $gold;
+                        z-index: 5;
+                        transition: 1.2s $extraSmooth;
+                        
+                    }
+                }
+                .thumb {
+                    flex: 0 0 66.66666%;
+                    position: relative;
+                    overflow: hidden;
+                    @media($tomobile) {
+                        flex: 0 0 100%;
+                        height: 300px;
+                    }
+                    &:after {
+                        content: '';
+                        display: block;
+                        padding-top: 50%;
+                    }
+                    img {
+                        transition: 1.2s $extraSmooth;
+
+                    }
+                }
+                .info-box {
+                    flex: 0 0 33.3333%;
+                    box-sizing: border-box;
+                    padding: 25px;
+                    text-align: center;
+                    position: relative;
+                    @media($tomobile) {
+                        flex: 0 0 100%;
+                        height: 300px;
+                    }
+                    &.cream {
+                        background-color: $lightGold;
+                    }
+                    &.white {
+                        background-color: $white;
+                    }
+                    &.default {
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            top: 0;
+                            transform: translate(-50%, 0);
+                            width: 1px;
+                            height: 54px;
+                            background-color: $gold;
+                        transition: 1.2s $extraSmooth;
+
+                        }
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            left: 50%;
+                            bottom: 25%;
+                            transform: translate(-50%, -50%);
+                            width: 30px;
+                            height: 1px;
+                            background-color: $gold;
+                        transition: 1.2s $extraSmooth;
+
+                        }
+                    }
+                    .default-title {
+                        font-size: 28px;                        
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        font-weight: 600;
+                        font-style: italic;
+                        transition: 1.2s $extraSmooth;
+                    }
+                    .upper-title {
+                        font-size: 28px;
+                    margin-top: 30px;
+                        font-weight: 600;
+                        font-style: italic;
+                    }
+                    .experience {
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                        .years {
+                            font-weight: 300;
+                            font-size: 146px;
+                            font-style: italic;
+                            color: $gold;
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            z-index: -1;
+                            transform: translate(-50%, -65%);
+                        }
+                        .text {
+                            display: flex;
+                            align-items: center;
+                            text-align: center;
+                            &:before {
+                                content: '';
+                                display: block;
+                                flex: 1 1;
+                                margin-right: 15px;
+                                height: 1px;
+                                background-color: $gold;
+                            }
+                            &:after {
+                                content: '';
+                                display: block;
+                                flex: 1 1;
+                                margin-left: 15px;
+                                height: 1px;
+                                background-color: $gold;
+                            }
+                            span {
+                                font-size: 22px;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+        .left {
+            flex: 0 0 100%;
+            @media ($tomobile) {
+                flex: 0 0 100%;
+            }
+        }
+        .right {
+            flex: 0 0 33.333333%;
+            @media ($tomobile) {
+                flex: 0 0 100%;
+            }
+        }
+    }
+}

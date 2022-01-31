@@ -1,0 +1,54 @@
+.products-page {
+    padding-bottom: 60px;
+   
+    .grid {
+        .item {
+            text-align: center;
+            flex: 0 0 20%;
+            padding: 15px 25px;
+            transition: 0.12s $smooth;
+            border: 1px solid transparent;
+            @media ($tosmall) {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            &:hover {
+                cursor: pointer;
+                border: 1px solid $gold;            
+            }
+             .counter {
+                font-style: italic;
+                color: $gold;
+                margin-bottom: 15px;
+                transition: 0.2s $smooth;
+                .slide-no {
+                    font-size: 28px;            
+                }
+                .max-slides {
+                    font-size: 16px;
+                }
+            }
+            .name {
+                font-size: 21px;
+                margin-bottom: 5px;
+                // height: 60px;
+                @media($tosmall) {
+                    font-size: 18px;
+                }
+            }
+            .images {
+                position: relative;
+                @include sizer(90%);
+                img {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}

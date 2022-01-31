@@ -1,0 +1,600 @@
+
+.about-us-header {
+    padding: 90px 0 45px;
+    background-image: url('../../dist/img/onas/bg_001.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media ($tomobile) {
+        padding: 45px 0;
+    }
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 75px;
+        .item {
+            color: $white;
+            font-style: italic;
+            font-size: 26px;
+            padding: 0 30px;
+            border-right: 1px solid $white;
+            height: 80px;
+            transition: 0.25s $smooth;
+            display: flex;
+            align-items: center;
+            &:last-child {
+                border: none;
+            }
+            &:hover {
+                cursor: pointer;
+                color: $gold;
+            }
+            &.active {
+                color: $gold;
+                font-size: 62px;
+            }
+        }
+    }
+    .content {
+        text-align: center;
+        width: 900px;
+        margin: 0 auto;
+        color: $white;
+        position: relative;
+        transition: 0.25s $smooth;
+        .item {
+            transition: 0.25s $smooth;
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+            top: 0;
+            &.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        @media (max-width: 1000px) {
+            width: 100%;
+            padding: 0 20px;
+        }
+    }
+    h3 {
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+    p {
+        font-family: Sofia-Pro;
+        font-size: 16px;
+        margin-bottom: 20px;
+        font-weight: 200;        
+    }
+    .experience-badge {
+        width: 210px;
+        margin: 30px auto 45px;
+    }
+    .experience {
+        text-align: center;
+        position: relative;
+        margin: 120px 0 90px;
+                        .years {
+                            font-weight: 300;
+                            font-size: 162px;
+                            font-style: italic;
+                            color: $gold;
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -65%);
+                        }
+                        .text {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            text-align: center;
+                            color: $white;
+                            position: relative;
+                            &:before {
+                                content: '';
+                                display: block;
+                                margin-right: 15px;
+                                height: 2px;
+                                flex: 0 0 60px;
+                                width: 60px;
+                                background-color: $gold;
+                            }
+                            &:after {
+                                content: '';
+                                display: block;
+                                flex: 1 1;
+                                margin-left: 15px;
+                                height: 2px;
+                                width: 60px;
+                                flex: 0 0 60px;                                
+                                background-color: $gold;
+                            }
+                            span {
+                                flex-grow: 0;
+                                font-size: 22px;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+}
+
+.about-us-timeline {
+    padding: 90px 0;
+    background-color: $graphiteBg;
+    background-image: url('../../dist/img/onas/bg_002.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .divider {
+        margin: 75px 0 140px;
+        
+        .line {
+            width: 600px;
+            margin: 0 auto;
+            background-color: $white;
+            height: 1px;
+        }
+        &:before {
+                content: '';
+                display: block;
+                margin: 0 auto 5px;
+                width: 300px;
+                height: 1px;
+                background-color: $gold;
+                opacity: 0.5;
+            }
+            &:after {
+                content: '';
+                display: block;
+                margin: 5px auto 0;
+                width: 300px;
+                height: 1px;
+                opacity: 0.5;
+
+                background-color: $gold;
+            }
+    }
+    .icon-grid {
+        .item {
+            flex: 0 0 20%;
+            width: 20%;
+            padding: 0 60px;
+            text-align: center;
+            @media ($tolarge) {
+                padding: 0 25px;
+            }
+            @media (max-width: 1000px) {
+                flex: 0 0 33.3333%;
+                width: 33.33333%;
+                margin-bottom: 25px;
+            }
+            @media (max-width: 600px) {
+                flex: 0 0 50%;
+                width: 50%;
+            }
+            .icon {
+                width: 90px;
+                height: 70px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin: 0 auto 30px;
+                &.candy {
+                    background-image: url('../../dist/img/onas/cukierek.svg');
+                }
+                &.people {
+                    background-image: url('../../dist/img/onas/ludziki.svg');
+                }
+                &.globe {
+                    background-image: url('../../dist/img/onas/globus.svg');
+                }
+                &.box {
+                    background-image: url('../../dist/img/onas/pudelko.svg');
+                }
+                &.factory {
+                    background-image: url('../../dist/img/onas/fabryka.svg');
+                }
+            }
+            .number {
+                font-style: italic;
+                color: $gold;
+                font-size: 66px;
+                margin-bottom: 25px;
+            }
+            .txt {
+                color: $white;
+                font-size: 16px;
+            }
+        }
+    }
+    .grid {
+        position: relative;
+        .item {
+        flex: 1 0 calc(16.666667% - 40px);
+        padding: 0 20px;
+        text-align: center;
+        overflow: hidden;
+        @media ($tosmall) {
+            flex: 0 0 100%;
+        }
+        &:hover {
+            cursor: pointer;
+            .date {
+                transform: translate(0, -10px);
+            }
+        }
+        &.active {
+            .date {
+                transition-delay: 0.25s;                
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+            .desc {
+                transition-delay: 0.25s;
+                opacity: 1;
+                transform: translate(0, 0);
+                &:after {
+                    transition-delay: 0.45s;                    
+                    width: 18px;
+                }
+            }
+        }
+        .date {
+            color: $gold;
+            font-size: 24px;
+            font-weight: 300;
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 25px;
+            transform: translate(0, -20px);
+            transition: 0.16s $extraSmooth;
+            transition-delay: 0s;
+            height: 120px;
+            background-position: center 60px;
+            background-size: 100px;
+            background-repeat: no-repeat;
+            &:after {
+                content: '';
+                display: block;
+                padding-top: 28%;
+            }
+            @media ($tosmall) {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+            &:before {
+                content: '';
+                display: block;
+                margin: 0 auto 15px;
+                width: 1px;
+                height: 36px;
+                background-color: $gold;
+                transition: 0.16s $extraSmooth;
+            }
+        }
+        .desc {
+            color: $white;
+            font-weight: 600;
+            font-size: 17px;
+            transform: translate(0, 10px);
+            opacity: 0;
+            transition-delay: 0s;
+            
+            transition: 0.16s $extraSmooth;
+            @media ($tosmall) {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+            &:after {
+                content: '';
+                display: block;
+                margin: 20px auto 0;
+                // width: 18px;
+                height: 1px;
+                background-color: $gold;
+                width: 0;
+                transition-delay: 0s;
+                transition: 0.16s $extraSmooth;
+                @media ($tosmall) {
+                    opacity: 1;
+                        width: 18px;
+                }
+            }
+        }
+    }
+        &:before {
+            content: '';
+            flex: 0 0 84%;
+            position: absolute;
+            display: block;
+            height: 1px;
+            width: 83.33333%;
+            background-color: $gold;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+        &:after {
+            content: '';
+            flex: 0 0 84%;
+            position: absolute;
+            display: block;
+            height: 0px;
+            width: 100vw;
+            border-bottom: 1px dashed $gold;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+    }
+    
+}
+
+.about-us-guys {
+    padding: 90px 0;
+    background-image: url('../../dist/img/onas/bg_002.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .img-wrapper {
+        flex: 0 0 25%;
+        width: 25%;
+        transform: scale(0.97);
+        position: relative;
+        transition: 0.2s $smooth;
+        &.active {
+            transform: scale(1);
+            .circle-btn {
+                .plus {
+                    &:after {
+                        transform: translate(-50%, -50%) rotate(0deg);
+                    }
+                }
+            }
+            img {
+                opacity: 1;
+                
+                filter: grayscale(0);
+            }
+        }
+        &:hover {
+            cursor: pointer;
+            img {
+                opacity: 1;
+                filter: grayscale(15);
+            }
+            .circle-btn {
+                transform: rotate(180deg) scale(1) translateZ(0);
+            }
+        }
+        img {
+            width: 100%;
+            // transform: scale(0.97);
+            opacity: 0.5;
+                filter: grayscale(30);
+            transition: 0.2s $smooth;
+        }
+        .circle-btn {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            transform: scale(0.9) translateZ(0);
+            transition: 0.2s $extraSmooth;
+        }
+    }
+    .content {
+        flex: 0 0 50%;
+        position: relative;
+        .content-tab {
+        padding: 60px;
+            
+            &.active {
+                
+                .name {
+                    transition-delay: 0.7s;
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+                .lead {
+                    transition-delay: 0.78s;
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+                .desc {
+                    transition-delay: 0.86s;
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+            }
+            &:nth-child(2) {
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+        .name {
+            color: $gold;
+            font-weight: 700;
+            font-size: 38px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translate(0, 15px);
+            transition: 0.4s $extraSmooth;
+            transition-delay: 0s;
+            &:after {
+                content: '';
+                display: block;
+                margin-top: 30px;
+                width: 60px;
+                height: 1px;
+                background-color: $gold;
+            }
+        }
+        .lead {
+            font-weight: 700;
+            font-size: 20px;
+            color: $white;
+            margin-bottom: 35px;
+            opacity: 0;
+            transform: translate(0, 15px);
+            transition: 0.4s $extraSmooth;
+            transition-delay: 0.08s;
+        }
+        .desc {
+            color: $white;
+            font-weight: 300;
+            font-family: Sofia-Pro;
+            opacity: 0;
+            transform: translate(0, 15px);
+            transition: 0.4s $extraSmooth;
+            transition-delay: 0.16s;
+        }
+    }
+}
+
+.about-us-map {
+    position: relative;
+    background-image: url('../../dist/img/onas/bg_003.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    padding: 30px 0;
+    .content {
+        width: 600px;
+        position: absolute;
+        top: 120px;
+        left: 15%;
+        @media ( $tosmall ) {
+            position: relative;
+            width: 100%;
+            padding: 0 20px;
+            top: 0;
+            left: 0;
+        }
+        .lead {
+            font-size: 24px;
+            font-weight: 700;
+            color: $white;
+            margin-bottom: 45px;
+            @media ($tosmall) {
+                font-size: 20px;
+            }
+        }
+        p {
+            color: $white;
+
+        }
+    }
+    svg {
+        width: 1200px;
+        float: right;
+        @media ($tosmall) {
+            width: 100%;
+        }
+    }
+}
+
+.about-us-gallery {
+    padding: 90px 0;
+    background-color: #222;
+    .custom-wrapper {
+        margin-left: 15%;
+
+        .gallery-grid {
+            
+            width: 100%;
+            max-width: 100%;
+            .grid {
+                display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 0 -10px;
+            height: 520px;
+            width: 100%;
+            max-width: 100%;
+            }
+            .item {
+                flex: 0 0 calc(50% - 20px);
+                width: 300px;
+                height: 190px;
+                position: relative;
+                margin: 10px;
+                overflow: hidden;
+                &:hover {
+                    cursor: pointer;
+                    img {
+                        transform: rotate(2deg) scale(1.05);
+                    }
+                    &:after {
+                        opacity: 1;
+                    }
+                    .plus {
+                        opacity: 1;
+                    }
+                }
+                img {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: 0.2s $smooth;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to top, rgba($red, 0.5) 0%, transparent 50%, transparent 100%);
+                    opacity: 0;
+                    transition: 0.2s $smooth;
+                }
+                .plus {
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    background-color: $red;
+                    display: block;
+                    width: 56px;
+                    height: 56px;
+                    transition: 0.2s $smooth;
+                    opacity: 0;
+                    border-radius: 50%;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        transform-origin: 50% 50%;
+                        width: 50%;
+                        height: 2px;
+                        background-color: $white;
+                    }
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%) rotate(90deg);
+                        transform-origin: 50% 50%;
+                        width: 50%;
+                        height: 2px;
+                        background-color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

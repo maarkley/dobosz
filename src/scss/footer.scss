@@ -1,0 +1,151 @@
+footer {
+    background-color: #333;
+    padding: 120px 0;
+    position: relative;
+    @media ($tomobile) {
+        padding: 45px 0;
+    }
+    @media ($tosmall) {
+        padding: 30px 0;
+    }
+    .content {
+        h1,h2,h3,h4,h5,h6 {
+            color: $gold;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        color: #555;
+    }
+    .left {
+        flex: 0 0 50%;
+        max-width: 50%;
+        box-sizing: border-box;
+        border-right: 2px solid #999;
+        padding-right: 15vw;
+        @media ($tomobile) {
+            flex: 0 0 100%;
+        max-width: 100%;
+            
+            border: none;
+        }
+    }
+    .right {
+        flex: 0 0 50%;
+        display: flex;
+        justify-content: flex-end;
+        @media ($tomobile) {
+            flex: 0 0 100%;
+            justify-content: flex-start;
+        }
+        form {
+            flex: 0 0 70%;
+            @media ($tomobile) {
+                flex: 0 0 100%;
+            }
+            .form-title {
+                font-size: 26px;
+                margin-bottom: 30px;
+                color: $gold;
+                text-align: right;
+                @media ($tomobile) {
+                    text-align: left;
+                }
+            }
+            .form-message {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(calc(-100% - 30px), -50%);
+                padding: 15px;
+                background-color: $graphiteBg;
+                color: $white;
+                transition: 0.15s $smooth;
+                opacity: 0;
+                font-weight: 300;
+                
+                font-family: Sofia-Pro;
+                &.show {
+                    opacity: 1;
+
+                }
+                &.success {
+                    color: green;
+                }
+            }
+            .form-group {
+                margin-bottom: 15px;
+                position: relative;
+                &.error {
+                    .validation-box {
+                        // border: 1px solid $red;
+                        color: $red;
+                    }
+                }
+                &.show-validation {
+                    .validation-box {
+                        transition-delay: 0.2s;
+                        opacity: 1;
+                    }
+                }
+                .validation-box {
+                    color: $white;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(calc(-100% - 20px), -50%);
+                    padding: 5px 15px;
+                    // border: 1px solid $white;
+                    opacity: 0;
+                    background-color: $graphiteBg;
+                    transition: 0.15s $smooth;
+                    font-weight: 300;
+                font-family: Sofia-Pro;
+                    
+                }
+                input {
+                    width: 100%;
+                    display: block;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid #555;
+                    text-align: right;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 300;
+                    padding: 7px;
+                    font-family: Sofia-Pro;
+                    letter-spacing: 2px;
+                    font-size: 12px;
+                    color: $white;
+                    &:placeholder {
+                        color: $txtColor;
+                    }
+                }
+                textarea {
+                    width: 100%;
+                    display: block;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid #555;
+                    text-align: right;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    font-weight: 300;
+                    font-family: Sofia-Pro;
+                    letter-spacing: 2px;
+                    font-size: 12px;
+                    padding: 7px;
+                    color: $white;
+                    height: 38px;
+                    &:placeholder {
+                        color: $txtColor;
+                    }
+                }
+            }
+        }
+    }
+}

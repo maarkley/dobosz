@@ -1,0 +1,31 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    a {
+        margin: 0 10px;
+        &.arrow {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 60px;
+            height: 60px;
+            &.prev {
+                background-image: url('../../dist/img/strzalka_lewo.svg');
+            }
+            &.next {
+                background-image: url('../../dist/img/strzalka_prawo.svg');
+
+            }
+        }
+        &.page {
+            font-weight: 300;
+            font-size: 18px;
+            font-family: Sofia-Pro;
+            &.current {
+                font-weight: 700;
+            }
+        }
+    }
+}

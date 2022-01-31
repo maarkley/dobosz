@@ -1,0 +1,28 @@
+
+@import 'variables';
+@import 'reset';
+@import 'globals';
+@import 'pseudo'; 
+@import 'nav';
+@import 'home-news';
+@import 'home-about-us';
+@import 'home-header';
+@import 'home-products-section';
+@import 'menu-layer';
+@import 'contact-page';
+@import 'product-page';
+@import 'products-page';
+@import 'about-us-page';
+@import 'articles-list';
+@import 'article-page';
+@import 'pagination';
+@import 'malihu-scrollbar';
+@import 'lightbox';
+@import 'static-page';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/slick-carousel/slick/slick-theme.scss';
+// @import '../../node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css';
+// @import '../../node_modules/lightbox2/src/css/lightbox.css';
+
+
+@import 'footer';
